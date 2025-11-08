@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages 公開手順</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans CJK JP", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            background-color: #f9f9f9;
+            color: #333;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #24292e;
+            border-bottom: 3px solid #7940c4;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #24292e;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        ol {
+            background-color: #fff;
+            padding: 20px 20px 20px 40px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+        .note-box {
+            background-color: #fffbef;
+            border-left: 5px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .note-box > p {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>◆GitHub PagesでHTMLとScriptを公開する手順</h1>
+
+    <h2>ステップ1: GitHubアカウントの準備</h2>
+    <ul>
+        <li>もし持っていなければ、<a href="[https://github.com/](https://github.com/)" target="_blank" rel="noopener">GitHub</a> で無料アカウントを作成してください。</li>
+    </ul>
+
+    <h2>ステップ2: 新しい「リポジトリ」を作成する</h2>
+    <p>リポジトリは、プロジェクトのファイル（HTML, Script, CSSなど）を保管する場所です。</p>
+    <ol>
+        <li>GitHubにログインし、画面右上の「+」アイコンをクリックし、「<strong>New repository</strong>」を選択します。</li>
+        <li><strong>Repository name</strong>: 好きな名前を付けます。（例: <code>my-web-script</code>）</li>
+        <li><strong>Public / Private</strong>: 「<strong>Public</strong>」を選択します。（※Privateリポジトリでも無料枠でPagesを使えますが、Publicが一般的です）</li>
+        <li>「<strong>Create repository</strong>」ボタンをクリックします。</li>
+    </ol>
+
+    <h2>ステップ3: ファイルをアップロードする</h2>
+    <p>作成したリポジトリのページで、ファイルをアップロードします。</p>
+    <ol>
+        <li>「<strong>Add file</strong>」をクリックし、「<strong>Upload files</strong>」を選択します。</li>
+        <li>公開したいHTMLファイル（例: <code>index.html</code>）や、Scriptファイル（例: <code>script.js</code>）、CSSファイルなどを、<strong>ドラッグ＆ドロップ</strong>するか、「choose your files」から選択します。</li>
+        <li>画面下の「<strong>Commit changes</strong>」ボタンをクリックして、アップロードを完了します。</li>
+    </ol>
+
+    <div class="note-box">
+        <p><strong>ポイント:</strong><br>
+            * トップページにしたいHTMLファイルの名前は <code>index.html</code> にしておくと、URLにファイル名を指定しなくても自動で表示されるため推奨されます。<br>
+            * もし <code>script.js</code> や <code>style.css</code> を別ファイルにしている場合、HTMLファイルからの参照パス（例: <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code>）が正しいか確認してください。
+        </p>
+    </div>
+
+    <h2>ステップ4: GitHub Pagesを有効にする</h2>
+    <p>アップロードしたファイルをウェブサイトとして公開する設定です。</p>
+    <ol>
+        <li>リポジトリのページの上部にある「<strong>Settings</strong>」（設定）タブをクリックします。</li>
+        <li>左側のメニューから「<strong>Pages</strong>」を選択します。</li>
+        <li>「Branch」の項目で、「None」となっているプルダウンメニューをクリックし、「<strong>main</strong>」（または <code>master</code>）を選択します。</li>
+        <li>右側の「/(root)」の部分はそのままで、「<strong>Save</strong>」ボタンをクリックします。</li>
+    </ol>
+
+    <h2>ステップ5: 公開されたURLを確認する</h2>
+    <ol>
+        <li>Saveボタンを押して数分待つと、同じ「Pages」の設定画面の上部に「<strong>Your site is live at...</strong>」というメッセージとURLが表示されます。</li>
+        <li>そのURL（例: <code>https://&lt;あなたのユーザー名&gt;.github.io/&lt;リポジトリ名&gt;/</code>）にアクセスすると、公開されたウェブサイトが表示されます。</li>
+    </ol>
+
+    <div class="note-box">
+        <p><strong>注意:</strong><br>
+            公開設定をしてからURLにアクセスできるようになるまで、<strong>1?2分程度</strong>かかる場合があります。すぐに表示されなくても焦らず、少し待ってから再度アクセスしてみてください。
+        </p>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #ddd; margin-top: 30px;">
+    <p style="font-size: 0.9em; color: #777;">
+        これで、Scriptを含むHTMLファイルの一般公開は完了です。<br>
+        もしファイルの更新（修正）をしたい場合は、リポジトリに戻って該当ファイルを開き、編集（鉛筆アイコン）して保存するか、再度「Upload files」から上書きアップロードすれば、数分後にサイトに反映されます。
+    </p>
+
+</body>
+</html>
